@@ -8,13 +8,8 @@ https://myreads-ivan-bookshelf.netlify.app/
 > Install the packages for frontend
 
 ```
-npm install react-bootstrap@next bootstrap@5.1.1 react-router-dom react-router-bootstrap axios react-redux redux-devtools-extension redux-thunk commonmark commonmark-react-renderer
-```
-
-> Update frontend before deployment
-
-```
-npm run build
+npm install
+npm start
 ```
 
 ## What You're Getting
