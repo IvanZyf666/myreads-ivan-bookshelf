@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import defaultCover from './images/default-cover.png'
 class Book extends Component{
   handleChange = event => {
     this.setState({ value: event.target.value });
@@ -13,7 +14,7 @@ class Book extends Component{
             <div className="book-cover"
               style={{width: 138,
                       height: 170,
-                      backgroundImage: `url(${imageLinks && imageLinks.thumbnail})`
+                      backgroundImage: imageLinks ? `url(${imageLinks.thumbnail})` : `url(${defaultCover})`
                     }}>
               <div title={shelf} className={"book-tag"+" book-tag-"+shelf}/>
             </div>
@@ -28,7 +29,7 @@ class Book extends Component{
             </div>
           </div>
           <div className="book-title">{title}</div>
-          <div className="book-authors">{authors.join(', ')}</div>
+          <div className="book-authors">{authors && authors.join(', ')}</div>
         </div>
       </li>
     )
