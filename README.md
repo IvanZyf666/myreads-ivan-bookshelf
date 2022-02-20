@@ -1,6 +1,6 @@
 # MyReads - Ivan's Bookshelf
-
-Current version is deployed and available on:
+A web application with React JS and Udacity API. Users can search books from the book library and add books to bookshelf.
+The project is deployed and available on:
 https://myreads-ivan-bookshelf.netlify.app/
 
 ## Setup
