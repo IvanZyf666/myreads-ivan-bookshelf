@@ -1,5 +1,5 @@
 # MyReads - Ivan's Bookshelf
-A web application with React JS and Udacity API. Users can search books from the book library and add books to bookshelf.
+A web application with React JS and Udacity API. Users can search books from the book library and add books to bookshelf.\n
 The project is deployed and available on:
 https://myreads-ivan-bookshelf.netlify.app/
 ![alt text](https://github.com/IvanZyf666/myreads-ivan-bookshelf/blob/master/public/bookshelf.png)
