@@ -2,7 +2,7 @@
 A web application with React JS and Udacity API. Users can search books from the book library and add books to bookshelf.
 The project is deployed and available on:
 https://myreads-ivan-bookshelf.netlify.app/
-![alt text](https://github.com/IvanZyf666/myreads-ivan-bookshelf/tree/master/public/screenshot.png)
+![alt text](https://github.com/IvanZyf666/myreads-ivan-bookshelf/blob/master/public/bookshelf.png)
 
 ## Setup
 
