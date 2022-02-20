@@ -296,3 +296,14 @@ button:active {
   border-radius: 8px;
   background: #5ff7c9;
 }
+
+.page-not-found{
+  text-align: center; 
+	height: 550px;
+	margin: auto;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}

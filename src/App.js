@@ -4,6 +4,7 @@ import { Routes,Route } from 'react-router-dom';
 import './App.css'
 import MainPage from './MainPage';
 import SearchBook from './SearchBook';
+import PageNotFound from './PageNotFound';
 import bg from './images/bg.jfif';
 
 class BooksApp extends React.Component {
@@ -14,10 +15,8 @@ class BooksApp extends React.Component {
      * users can use the browser's back and forward buttons to navigate between
      * pages, as well as provide a good URL they can bookmark and share.
      */
-    showSearchPage: false,
-    books: '',
-    query: '',    
-    searchResults: [],
+    books: '',   
+    searchResult: [],
   }
 
   componentDidMount() {
@@ -35,8 +34,6 @@ class BooksApp extends React.Component {
   )
 
   updateBookShelf = (book, shelf) => {
-    console.log(book);
-    console.log(shelf);
     if(book.shelf === shelf)
       return;
     BooksAPI.update(book, shelf).then(() => {
@@ -48,29 +45,25 @@ class BooksApp extends React.Component {
   }
 
   onUpdateQuery = (query) => {
-    // console.log(content)
-    this.setState(() => ({
-      query: query
-    }))
     if(query) BooksAPI.search(query).then((result) => {
+      if(!result.error) result.map((book) => {
+        this.state.books.map((b) => {
+          if(book.id === b.id) book.shelf = b.shelf;
+        })
+        if(!book.shelf) book.shelf = 'none';
+      })
       this.setState(() => ({
-        searchResults: !result.error ? result : []
+        searchResult: !result.error ? result : []
       }));
     }).catch(err => console.log(err));
-    else this.setState(() => ({searchResults: []}));
-  }
-
-  onLabelClick = (content) => {
-    this.setState(() => ({
-      query: content
-    }))
-    this.onUpdateQuery(content);
+    else this.setState(() => ({searchResult: []}));
   }
 
   render() {
     return (
       <div className="app" >
         <Routes>
+          <Route path="*" element={<PageNotFound />} />
           <Route exact path='/' element={
             <MainPage
               books={this.state.books} 
@@ -79,11 +72,9 @@ class BooksApp extends React.Component {
           }/>
           <Route exact path='/search' element={
             <SearchBook
-              books={this.state.searchResults}
+              books={this.state.searchResult}
               onShelfUpdate={this.updateBookShelf}
-              query={this.state.query}
               onUpdateQuery={this.onUpdateQuery}
-              onLabelClick={this.onLabelClick}
             />
           }/>
         </Routes>
