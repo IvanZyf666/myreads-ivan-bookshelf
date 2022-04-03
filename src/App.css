@@ -1,4 +1,6 @@
-html, body, .root {
+html,
+body,
+.root {
   height: 100%;
 }
 
@@ -6,7 +8,8 @@ body {
   line-height: 1.5;
 }
 
-body, .app {
+body,
+.app {
   background-image: url('./images/bg.jfif');
 }
 
@@ -18,7 +21,8 @@ body, .app {
   padding: 10px 0;
   background: #141414;
   text-align: center;
-  z-index: 1; /* value larger than sidebar -> top layer */
+  z-index: 1;
+  /* value larger than sidebar -> top layer */
 }
 
 .list-books-title h1 {
@@ -45,39 +49,40 @@ body, .app {
   color: antiquewhite;
 }
 
-.sidenav h1{
+.sidenav h1 {
   margin-left: 20px;
   margin-top: 40px;
   text-align: center;
 }
 
-.sidenav a{
+.sidenav a {
   color: antiquewhite;
   text-decoration: none;
   line-height: 30pt;
   font-size: 15pt;
 }
 
-.sidenav a:hover{
+.sidenav a:hover {
   color: aliceblue;
   font-size: 18pt;
 }
 
-.sidenav ul li{
+.sidenav ul li {
   margin-top: 15px;
   list-style: none;
 }
 
-.sidenav #sidenav_icon ul li{
+.sidenav #sidenav_icon ul li {
   list-style: none;
   display: inline;
-  
+
 }
 
 
 
 .bookshelf {
   padding: 0 10px 20px;
+  width: 90%;
 }
 
 @media (min-width: 600px) {
@@ -100,7 +105,8 @@ body, .app {
   bottom: 25px;
 }
 
-.open-search button {
+.open-search button,
+.open-search button:active {
   display: block;
   width: 50px;
   height: 50px;
@@ -110,21 +116,30 @@ body, .app {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 28px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+  margin: 10px;
+  border: 10px double;
+  border-color: antiquewhite;
+  border-radius: 30px;
+  padding: 20px;
+  background-color: black;
   font-size: 0;
   outline: 0;
 }
 
 .open-search button:hover {
-  background-color: rgb(55, 146, 250);
+  margin: 8px;
+  padding: 22px;
+  border-radius: 32px;
 }
 
 
 /* search page */
 .search-books {
   margin: 50px;
-	padding: 0; 
+  padding: 0;
 }
+
 .search-books-bar {
   /* position: absolute; */
   margin: 0 auto;
@@ -133,7 +148,7 @@ body, .app {
   left: 10%;
   z-index: 5;
   display: flex;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 0 6px rgba(0,0,0,0.23);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 0 6px rgba(0, 0, 0, 0.23);
 }
 
 .search-books-input-wrapper {
@@ -173,11 +188,27 @@ button:active {
   padding: 20px 10px 20px;
 }
 
-.books-row {
-  margin-left: 30px;
-  /* text-align: center; */
-  /* margin-bottom: 0; */
+.books-row,
+.books-row:active {
+  /* remove underline*/
+  text-decoration: none;
+  margin: 30px auto;
+  margin-bottom: 0px;
+  display: flex;
+  font-size: x-large;
+  padding: 5px;
+  width: fit-content;
+  border: 10px double;
+  color: antiquewhite;
+  border-color: antiquewhite;
+  border-radius: 30px;
+  background-color: black;
 }
+
+.books-row:hover {
+  color: white;
+}
+
 /* books grid */
 .books-grid {
   list-style-type: none;
@@ -186,6 +217,7 @@ button:active {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  margin-top: 0px;
 }
 
 .books-grid li {
@@ -247,16 +279,21 @@ button:active {
 .book-shelf-changer {
   position: absolute;
   right: 0;
-  bottom: -10px;
-  width: 40px;
-  height: 40px;
+  bottom: -2px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background: #50aefc;
   background-image: url('./icons/arrow-drop-down.svg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: 20px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  background-color: black;
+  border: 8px double;
+  border-color: antiquewhite;
+  border-radius: 30px;
+  font-size: 0;
+  outline: 0;
 }
 
 .book-shelf-changer select {
@@ -269,7 +306,7 @@ button:active {
 /* book cover */
 
 .book-cover {
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 .book-cover-title {
@@ -287,22 +324,28 @@ button:active {
   background: #b3f5e1;
   outline: 0;
 }
-.search-label:hover{
+
+.search-label:hover {
   background: #92f5d7;
 }
-.search-label:active{
+
+.search-label:active {
   border: 1.5px solid;
   border-radius: 8px;
   background: #5ff7c9;
 }
 
-.page-not-found{
-  text-align: center; 
-	height: 550px;
-	margin: auto;
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
+.page-not-found {
+  text-align: center;
+  height: 550px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.link {
+  text-decoration: none;
 }
